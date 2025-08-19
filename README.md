@@ -59,7 +59,3 @@ Browse to the pattern folder you’re interested in.
 Read the implementation and understand the intent.
 Run the demo project to see the pattern in action.
 Apply the pattern in your own .NET projects with confidence.
-
-Template Method
-
-Visitor
