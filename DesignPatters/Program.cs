@@ -2,6 +2,7 @@
 using DesignPatterns.Coupling;
 using DesignPatterns.Behavioural.Memento;
 using DesignPatterns.Behavioural.State;
+using DesignPatterns.Behavioural.Strategy;
 
 Console.WriteLine($"Hello, World! StartedAt - {DateTime.Now}");
 
@@ -31,14 +32,25 @@ Console.WriteLine($"Hello, World! StartedAt - {DateTime.Now}");
 
 #region State Pattern
 
-var document = new Document(UserRoles.Admin);
-Console.WriteLine(document.State);
-document.Publish();
-Console.WriteLine(document.State);
-document.Publish();
-Console.WriteLine(document.State);
-document.State = new DraftState(document);
-Console.WriteLine(document.State);
+// var document = new Document(UserRoles.Admin);
+// Console.WriteLine(document.State);
+// document.Publish();
+// Console.WriteLine(document.State);
+// document.Publish();
+// Console.WriteLine(document.State);
+// document.State = new DraftState(document);
+// Console.WriteLine(document.State);
+#endregion
+
+#region Strategy Pattern
+
+string fileName = "/file/my_video.mp4";
+var videoStorage = new VideoStorage(new CompressMov(), new OverlayBlur());
+videoStorage.StoreVideo(fileName);
+
+videoStorage.SetCompressor(new CompressMp4());
+videoStorage.SetOverlay(new OverlayBlackAndWhite());
+videoStorage.StoreVideo(fileName);
 #endregion
 
 

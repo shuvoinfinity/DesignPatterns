@@ -1,6 +1,6 @@
-Design Patterns in C# (.NET 8)
+Design Patterns in C# (.NET 9)
 
-This repository contains practical, well-structured implementations of all Gang of Four (GoF) Design Patterns using C# and .NET 8.
+This repository contains practical, well-structured implementations of all Gang of Four (GoF) Design Patterns using C# and .NET 9.
 It is intended as a reference and learning resource for developers who want to understand and apply design patterns effectively in real-world .NET applications.
 
 🎯 Purpose
@@ -41,7 +41,7 @@ Behavioral
 
 🛠️ Tech Stack
 Language: C# 12
-Framework: .NET 8
+Framework: .NET 9
 Testing: xUnit (with example unit tests for pattern verification)
 Project Structure:
 Each pattern lives in its own folder.
