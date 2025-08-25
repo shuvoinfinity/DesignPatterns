@@ -3,6 +3,7 @@ using DesignPatterns.Coupling;
 using DesignPatterns.Behavioural.Memento;
 using DesignPatterns.Behavioural.State;
 using DesignPatterns.Behavioural.Strategy;
+using DesignPatterns.Behavioural.Iterator;
 
 Console.WriteLine($"Hello, World! StartedAt - {DateTime.Now}");
 
@@ -44,16 +45,28 @@ Console.WriteLine($"Hello, World! StartedAt - {DateTime.Now}");
 
 #region Strategy Pattern
 
-string fileName = "/file/my_video.mp4";
-var videoStorage = new VideoStorage(new CompressMov(), new OverlayBlur());
-videoStorage.StoreVideo(fileName);
+// string fileName = "/file/my_video.mp4";
+// var videoStorage = new VideoStorage(new CompressMov(), new OverlayBlur());
+// videoStorage.StoreVideo(fileName);
 
-videoStorage.SetCompressor(new CompressMp4());
-videoStorage.SetOverlay(new OverlayBlackAndWhite());
-videoStorage.StoreVideo(fileName);
+// videoStorage.SetCompressor(new CompressMp4());
+// videoStorage.SetOverlay(new OverlayBlackAndWhite());
+// videoStorage.StoreVideo(fileName);
 #endregion
 
+#region Iterator Pattern
+var shoppingList = new ShoppingList();
+shoppingList.AddItem("Milk");
+shoppingList.AddItem("Water");
+shoppingList.AddItem("Tea");
 
+var iterator = shoppingList.CreateIterator();
+while (iterator.HasNext())
+{
+    Console.WriteLine(iterator.Current());
+    iterator.Next();
+}
+#endregion
 
 
 Console.WriteLine($"CompletedAt - {DateTime.Now}");
